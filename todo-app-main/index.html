@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet"> 
+
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body id="body">
+ 
+  <div class="image_background_container" id="img_bg"></div>
+    
+  <div class="app_container">
+    <header class="header_section">
+      <h1 class="title">Todo</h1>
+      <button id="light_btn">
+        <img id="sun_img" src="./images/icon-sun.svg" alt="sun_icon">
+      </button>
+      <button id="dark_btn">
+        <img id="moon_img" src="./images/icon-moon.svg" alt="moon_icon">
+      </button>
+    </header>
+    <main class="main_section">
+      <div id="todo_generator">
+        <button id="checkbox">.</button>
+        <input id="input" type="text" placeholder="Create a new todo..." 
+        minlength="1">
+      </div>
+      <div id="todo_preview">
+        <div id="todo_list">
+           
+        </div>
+        <div class="info_section" id="info">
+          <button id="items_counter">
+            <span id="items_number">0</span>items left
+          </button>
+          <button id="all_items">All</button>
+          <button id="active_items">Active</button>
+          <button id="completed_items">Completed</button>
+          <button id="clear_completed_items">Clear Completed</button>
+        </div>
+      </div>
+    </main>
+    <p class="instructions">Drag and drop to reorder list</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

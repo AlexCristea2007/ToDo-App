@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&display=swap');
+:root {
+    /* Primary Colors */
+    --bright-blue: hsl(220, 98%, 61%);
+    --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  
+    /* Neutral Colors */
+  
+    /* Light Theme */
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-light-grayish-blue: hsl(236, 33%, 92%);
+    --light-grayish-blue: hsl(233, 11%, 84%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --very-dark-grayish-blue-light: hsl(235, 19%, 35%);
+  
+    /* Dark Theme */
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue-dark: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue-dark: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue-dark-1: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue-dark-2: hsl(237, 14%, 26%);
+
+    /* Font */
+    --fs-s: 14.5px;
+    --fs-p: 18px;
+    --fs-h: 45px;
+    --fw400: 400;
+    --fw700: 700;
+}
+*, *>*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}  
+*::selection {
+    color: var(--very-dark-blue);
+    background-color: var(--light-grayish-blue-dark);
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Josefin Sans", sans-serif;
+    position: relative;
+    background-color: var(--very-dark-blue);
+}
+.image_background_container {
+    min-width: 100%;
+    height: 350px;
+    background-image: url(./images/bg-desktop-dark.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.app_container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    z-index: 1001;
+    margin: 100px auto
+}
+.header_section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.title {
+    font-size: var(--fs-h);
+    font-weight: var(--fw700);
+    text-transform: uppercase;
+    letter-spacing: .8rem;
+    color: var(--very-light-gray);
+}
+.header_section button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#light_btn {
+    display: inline-block;
+}
+#dark_btn {
+    display: none;
+}
+.main_section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+#todo_generator {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: -5px 5px 8px hsl(235, 21%, 7%);
+    background-color: var(--very-dark-desaturated-blue);
+}
+#checkbox {
+    content: '.';
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--very-dark-grayish-blue-dark-2);
+    cursor: pointer;
+    color: transparent;
+    background-color: transparent;
+}
+#checkbox:checked {
+    background-image: url(./images/icon-check.svg);
+}
+#input {
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 20px 2% 20px 0;
+    font-size: var(--fs-p);
+    font-weight: var(--fw400);
+    color: var(--light-grayish-blue-dark);
+    caret-color: hsl(220, 93%, 26%);
+}
+#input::placeholder {
+    color: var(--dark-grayish-blue-dark);
+}
+#todo_preview {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: -5px 5px 8px hsl(235, 21%, 7%);
+    background-color: var(--very-dark-desaturated-blue);
+}
+#todo_list #div {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--very-dark-grayish-blue-dark-2);
+}
+#todo_list #div #checkbox {
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--very-dark-grayish-blue-dark-2);
+    cursor: pointer;
+    color: transparent;
+    background-color: transparent;
+}
+#todo_list #div #paragraph {
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 20px 2% 20px 0;
+    font-size: var(--fs-p);
+    font-weight: var(--fw400);
+    color: var(--light-grayish-blue-dark);
+}
+#todo_list #div #close_btn {
+    display: none;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 2%;
+}
+#todo_list #div:hover #paragraph {
+    padding-left: 1.8rem;
+}
+#todo_list #div:hover #close_btn {
+    display: inline-block;
+    background-color: transparent;
+}
+.info_section {
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.items_number {
+    margin-right: .15rem;
+}
+.info_section button {
+    border: none;
+    background-color: transparent;
+    color: var(--dark-grayish-blue-dark);
+    font-size: var(--fs-s);
+    font-weight: var(--fw400);
+    cursor: pointer;
+}
+.info_section button:hover {
+    color: var(--light-grayish-blue-hover);
+}
+.info_section button:active:not(:first-of-type) {
+    color: var(--bright-blue);
+}
+.info_section button:first-of-type {
+    margin-right: auto;
+}
+.info_section button:last-of-type {
+    margin-left:  auto;
+}
+.info_section button:nth-of-type(3) {
+    margin-inline: 2%;
+}
+.instructions {
+    font-size: var(--fs-s);
+    font-weight: var(--fw400);
+    color: var(--dark-grayish-blue-dark);
+    text-align: center;
+}
+@media (max-width:850px) {
+    .app_container {
+        width: 90%;
+    }
+    .info_section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }
+    #items_counter,
+    #clear_completed_items {
+        display: none;
+    }
+}
